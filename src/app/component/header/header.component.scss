@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap");
+
+.logo-name {
+  font-family: "Oxanium", cursive;
+  font-size: 2em;
+}
+.content {
+  padding: 0.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-size: 1.75em;
+  margin-right: 1em;
+  font-weight: 300;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+button {
+  font-size: 1em;
+  font-family: "Noto Sans JP", sans-serif;
+
+  background: none;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+mat-icon {
+  font-size: 1.5em;
+}
+
+.drop-down{
+  margin-right: 0;
+}
