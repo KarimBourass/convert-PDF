@@ -1,6 +1,6 @@
 <header>
   <div class="content" fxHide fxShow.gt-sm>
-    <div class="logo">
+    <div class="logo" routerLink="/home" routerLinkActive="active">
       <span class="logo-name">Converter</span>
       <svg id="Layer_1" enable-background="new 0 0 54 54" height="54" viewBox="0 0 512 512" width="54"
         xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +51,7 @@
       </svg>
     </div>
     <div class="navigation">
-      <a routerLink="/about" routerLinkActive="active"><span>MERGE PDF</span></a>
+      <a routerLink="/merge" routerLinkActive="active"><span>MERGE PDF</span></a>
       <a routerLink="/about" routerLinkActive="active"><span>SPLIT PDF</span></a>
       <a routerLink="/about" routerLinkActive="active"><span>COMPRESS PDF</span></a>
       <button [matMenuTriggerFor]="menu"><span class="drop-down">CONVERT PDF</span>

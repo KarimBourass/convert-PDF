@@ -1,10 +1,12 @@
+import { MergePageComponent } from './component/merge-page/merge-page.component';
 import { HomeComponent } from './component/home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '**', redirectTo: '' },
+  { path: 'home', component: HomeComponent },
+  { path: 'merge', component:MergePageComponent },
+  { path: '**', redirectTo: '/home' },
 
 ];
 

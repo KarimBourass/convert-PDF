@@ -10,13 +10,15 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './component/home/home.component';
+import { MergePageComponent } from './component/merge-page/merge-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    MergePageComponent
   ],
   imports: [
     BrowserModule,
