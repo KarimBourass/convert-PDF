@@ -26,11 +26,18 @@ export class FileService {
     });
   }
 
+  split_file(formData: any): any {
+    return this.httpClient.post('http://127.0.0.1:5000/convert/split', formData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
 
-  get_file(): any {
+
+  get_file(fileName: string): any {
     const QLF = 'QLF'
     var mediaType = 'application/pdf';
-    return this.httpClient.post('http://127.0.0.1:5000/file/QLF', { location: "report.pdf" }, { responseType: 'blob' }).subscribe(
+    return this.httpClient.post('http://127.0.0.1:5000/file/' + fileName, { location: "convert.pdf" }, { responseType: 'blob' }).subscribe(
       (response) => {
         var blob = new Blob([response], { type: mediaType });
         saveAs(blob, 'report.pdf')

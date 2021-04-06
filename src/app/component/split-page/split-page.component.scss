@@ -1,0 +1,32 @@
+.upload {
+  margin-top: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select {
+  text-align: center;
+}
+
+.select h1 {
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+}
+
+p {
+  margin-top: 1.2em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+}
+
+.upload-btn {
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  background-color: #e5322d;
+  padding: 1em 2em;
+  color: #fff;
+  border-radius: 10px;
+}

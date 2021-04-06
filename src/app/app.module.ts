@@ -13,6 +13,7 @@ import { HomeComponent } from './component/home/home.component';
 import { MergePageComponent } from './component/merge-page/merge-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SplitPageComponent } from './component/split-page/split-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    MergePageComponent
+    MergePageComponent,
+    SplitPageComponent
   ],
   imports: [
     BrowserModule,

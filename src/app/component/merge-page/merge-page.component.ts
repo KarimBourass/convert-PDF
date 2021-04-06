@@ -58,7 +58,7 @@ export class MergePageComponent implements OnInit {
 
   jibLfile(){
     console.log('klikitini');
-    this.fileService.get_file();
+    this.fileService.get_file('nnnnn');
   }
 
 }
