@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FileService } from 'src/app/shared/services/file.service';
 
 @Component({
@@ -6,35 +6,55 @@ import { FileService } from 'src/app/shared/services/file.service';
   templateUrl: './split-page.component.html',
   styleUrls: ['./split-page.component.scss']
 })
-export class SplitPageComponent implements OnInit {
+export class SplitPageComponent implements OnInit, OnDestroy {
 
   @ViewChild("fileUpload", { static: false }) fileUpload: ElementRef | any;
   files: any = [];
   fileName: string | any;
   myFileName = '';
-  loading = false;
+  upload = false;
   dowload = false;
+  showPages = false;
+  stratPage = 1;
+  endPage = 1;
+  spinner= false;
 
   constructor(private fileService: FileService) { }
+
 
   ngOnInit(): void {
   }
 
+  ngOnDestroy() {
+    console.log('hhhhhhhhhhhhhhh');
+  }
+
 
   onClick() {
-    const fileUpload = this.fileUpload.nativeElement; fileUpload.onchange = () => {
+    const fileUpload = this.fileUpload.nativeElement;
+    fileUpload.onchange = () => {
       for (let index = 0; index < fileUpload.files.length; index++) {
         const file = fileUpload.files[index];
         this.fileName = file.name
-
         this.files.push({ data: file, inProgress: false, progress: 0 });
       }
-      this.uploadFiles();
+      this.showPages = true;
     };
     fileUpload.click();
   }
 
+  splitFile(contactForm:any){
+    this.upload= true;
+    this.stratPage = contactForm.value.startPage;
+    this.endPage = contactForm.value.endPage;
+    this.uploadFiles();
+  }
+
+
+
   private uploadFiles() {
+    this.showPages= false;
+    this.spinner= true;
     this.fileUpload.nativeElement.value = '';
     this.files.forEach((file: any) => {
       this.uploadFile(file);
@@ -42,24 +62,23 @@ export class SplitPageComponent implements OnInit {
   }
 
   uploadFile(file: any) {
-    this.loading = true;
     const formData = new FormData();
     formData.append('file', file.data);
     formData.append('name', this.fileName);
-    formData.append('start_page', '1');
-    formData.append('end_page', '2');
+    formData.append('start_page', String(this.stratPage));
+    formData.append('end_page', String(this.endPage));
     file.inProgress = true;
     this.fileService.split_file(formData).subscribe(
       (rsp: any) => {
-        this.loading = false
         const body = rsp['body']
         this.myFileName = body?.file_id
-        this.dowload = true;
+        setTimeout(() => {
+          this.dowload = true;
+          this.spinner = false;
+        }, 2000)
       }
     );
-    this.loading = false
   }
-
 
   downloadFile(fileName: string) {
     this.fileService.get_file(fileName);

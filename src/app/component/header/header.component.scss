@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 .logo-name {
   font-family: "Oxanium", cursive;
   font-size: 2em;
@@ -9,17 +9,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-right: 8%;
+  margin-left: 8%;
 }
 .logo {
   display: flex;
   align-items: center;
+  :hover{
+    cursor: pointer;
+  }
+}
+.logo:focus{
+  outline: none;
 }
 
 span {
-  font-size: 1.75em;
+  font-size: 1.5em;
   margin-right: 1em;
-  font-weight: 300;
-  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-family: 'Roboto';
 }
 
 a {
@@ -28,8 +36,6 @@ a {
 }
 
 button {
-  font-size: 1em;
-  font-family: "Noto Sans JP", sans-serif;
 
   background: none;
   border: none;

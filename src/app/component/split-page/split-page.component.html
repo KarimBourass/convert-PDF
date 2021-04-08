@@ -5,22 +5,31 @@
     <p>Separate one page or a whole set for easy conversion into independent PDF files.</p>
   </div>
 
-  <div class="upload">
-
+  <div class="upload" *ngIf="!upload">
     <button class="upload-btn" mat-button (click)="onClick()">
       Select PDF file
     </button>
     <p>or drop PDF here</p>
-
     <input type="file" #fileUpload id="fileUpload" name="fileUpload" multiple="multiple" accept="application/pdf,.csv"
       style="display:none;" />
-    <span>{{fileName}}</span>
-
   </div>
 
-  <h1 *ngIf="loading">Loadinggggggggggggggggggggggggggggggggggg</h1>
-  <div *ngIf="dowload">
-    <button class="upload-btn" mat-button (click)='downloadFile(fileName)'>JIB le file</button>
+  <form class="pages" *ngIf="showPages" #contactForm="ngForm" (ngSubmit)="splitFile(contactForm)">
+    <mat-form-field class="page">
+      <mat-label>Start Page</mat-label>
+      <input matInput type="number" name="startPage" ngModel>
+    </mat-form-field>
+    <mat-form-field class="page">
+      <mat-label>End Page</mat-label>
+      <input matInput type="number"  name="endPage" ngModel>
+    </mat-form-field>
+    <button class="upload-btn" mat-button type="submit">Split PDF</button>
+  </form>
+
+  <mat-spinner *ngIf="spinner"></mat-spinner>
+
+  <div class="download" *ngIf="dowload">
+    <button class="upload-btn" mat-button (click)='downloadFile(fileName)'>Download split PDF</button>
   </div>
 
 </div>

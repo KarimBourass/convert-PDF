@@ -12,7 +12,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { HomeComponent } from './component/home/home.component';
 import { MergePageComponent } from './component/merge-page/merge-page.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SplitPageComponent } from './component/split-page/split-page.component';
 
 @NgModule({
@@ -31,7 +31,8 @@ import { SplitPageComponent } from './component/split-page/split-page.component'
     FlexLayoutModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

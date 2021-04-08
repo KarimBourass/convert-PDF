@@ -65,7 +65,7 @@
   </div>
 
   <div class="content" fxShow fxHide.gt-sm>
-    <div class="logo">
+    <div class="logo" routerLink="/home" routerLinkActive="active">
       <span class="logo-name">Converter</span>
       <svg id="Layer_1" enable-background="new 0 0 32 32" height="32" viewBox="0 0 512 512" width="32"
         xmlns="http://www.w3.org/2000/svg">
@@ -121,8 +121,8 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #animals="matMenu">
-          <button routerLink="/about" routerLinkActive="active" mat-menu-item>MERGE PDF</button>
-          <button routerLink="/about" routerLinkActive="active" mat-menu-item>SPLIT PDF</button>
+          <button routerLink="/merge" routerLinkActive="active" mat-menu-item>MERGE PDF</button>
+          <button routerLink="/split" routerLinkActive="active" mat-menu-item>SPLIT PDF</button>
           <button routerLink="/about" routerLinkActive="active" mat-menu-item>COMPRESS PDF</button>
           <button mat-menu-item [matMenuTriggerFor]="invertebrates">CONVERT PDF</button>
         </mat-menu>
