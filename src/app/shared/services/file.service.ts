@@ -43,4 +43,8 @@ export class FileService {
         saveAs(blob, 'report.pdf')
       })
   }
+
+  delete_file(fileName: string): any {
+    return this.httpClient.delete('http://127.0.0.1:5000/file/'+fileName);
+  }
 }

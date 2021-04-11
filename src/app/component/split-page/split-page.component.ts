@@ -26,7 +26,7 @@ export class SplitPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('hhhhhhhhhhhhhhh');
+    this.fileService.delete_file(this.fileName);
   }
 
 
